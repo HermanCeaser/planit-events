@@ -17,4 +17,4 @@ jobs:
       - run: npm build
       - run: |
           npm install -g surge
-      - run: surge ./build planitevents.surge.sh --token ${{ secrects.SURGE_TOKEN }}
+      - run: surge ./build planitevents.surge.sh --token ${{ secrets.SURGE_TOKEN }}
