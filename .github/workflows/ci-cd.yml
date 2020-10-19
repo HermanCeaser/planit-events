@@ -16,7 +16,7 @@ jobs:
           node-version: 12
       - run: npm ci
       - run: npm test
-      - run: npm build
+      - run: npm run build
       - run: |
           npm install -g surge
       - run: surge ./build planitevents.surge.sh --token ${{ secrets.SURGE_TOKEN }}
