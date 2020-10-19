@@ -1,20 +1,22 @@
 name: Node Continous Integration
 
 on:
-  push:
-    branches: [master]
+  pull_request:
+    branches:
+      - develop
+      - master
 
 jobs:
-  build:
+  test_pull_requests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: 12.16.x
+          node-version: 12
       - run: npm ci
-      - run: ci=true npm test --silent
-      - run: npm build
+      - run: npm test
+      - run: npm run build
       - run: |
           npm install -g surge
-      - run: surge ./build planitevents.surge.sh --token ${{ secrects.SURGE_TOKEN }}
+      - run: surge ./build planitevents.surge.sh --token ${{ secrets.SURGE_TOKEN }}
