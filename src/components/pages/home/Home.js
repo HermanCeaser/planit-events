@@ -70,6 +70,7 @@ const Home = () => {
     document.title = "Home - Planit";
   });
   return (
+
     <React.Fragment>
       <Headline>
         <h1>Plan and manage your Events painlessley</h1>
@@ -81,6 +82,8 @@ const Home = () => {
       </Headline>
       <GetStarted>Get Started</GetStarted>
     </React.Fragment>
+
+
   );
 };
 
