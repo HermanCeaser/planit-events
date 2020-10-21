@@ -6,8 +6,28 @@ const Ul = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
+  align-item: center;
   li {
-    padding: 18px 10px;
+    text-align: center;
+    padding: 30px 25px;
+  }
+  #try {
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #a8c5dd;
+    font-weight: bold;
+    border: none;
+    padding: 12px 6px;
+    align-self: center;
+
+    a {
+      color: #002026;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: white;
   }
   @media (max-width: 768px) {
     flex-flow: column nowrap;
@@ -33,10 +53,17 @@ const NavBar = ({ open }) => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/about">About</Link>
+        <Link to="/about">Product</Link>
       </li>
-      <li>Sign In</li>
-      <li>Sign Up</li>
+      <li>
+        <Link to="/about">Why Us</Link>
+      </li>
+      <li>
+        <Link to="/about">Sign In</Link>
+      </li>
+      <li id="try">
+        <Link to="/">Try For Free</Link>
+      </li>
     </Ul>
   );
 };
