@@ -4,7 +4,7 @@ import App from "./App";
 
 test("renders welcome message", () => {
   const { getByText } = render(<App />);
-  const heading = getByText(/welcome to plan it event planner/i);
+  const heading = getByText(/plan and manage your events/i);
   expect(heading).toBeInTheDocument();
 });
 
